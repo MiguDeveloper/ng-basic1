@@ -1,0 +1,10 @@
+<h1>Dragon Ball Z</h1>
+<hr />
+<div class="row">
+  <div class="col">
+    <app-lista-personajes [heroes]="heroes"></app-lista-personajes>
+  </div>
+  <div class="col">
+    <app-form-personaje (personaje)="addHeroe($event)"></app-form-personaje>
+  </div>
+</div>

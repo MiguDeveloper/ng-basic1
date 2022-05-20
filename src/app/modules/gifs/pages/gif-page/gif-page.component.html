@@ -1,0 +1,12 @@
+<div class="row p-3">
+  <div class="col">
+    <app-search (terminoBuscar)="buscar($event)"></app-search>
+  </div>
+</div>
+
+<hr />
+<div class="row">
+  <div class="col">
+    <app-results [resultados]="resultsSearch"></app-results>
+  </div>
+</div>
