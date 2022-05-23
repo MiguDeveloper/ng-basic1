@@ -10,6 +10,8 @@ import { PorPaisComponent } from './pages/por-pais/por-pais.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { PaisMainComponent } from './pais-main.component';
+import { PaisTableComponent } from './components/pais-table/pais-table.component';
+import { PaisFormComponent } from './components/pais-form/pais-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PaisMainComponent } from './pais-main.component';
     PorRegionComponent,
     VerPaisComponent,
     PaisMainComponent,
+    PaisTableComponent,
+    PaisFormComponent,
   ],
   imports: [
     CommonModule,
