@@ -11,12 +11,15 @@ export class PorPaisComponent implements OnInit {
   termino: string = '';
   hasError: boolean = false;
   paises: Pais[] = [];
+  paisesSugeridos: Pais[] = [];
+  showSugerencias: boolean = false;
 
   constructor(private paisService: PaisService) {}
 
   ngOnInit(): void {}
 
   buscar(termino: string) {
+    this.showSugerencias = false;
     this.termino = termino;
     this.hasError = false;
     this.paisService.buscarPais$(this.termino).subscribe(
@@ -32,7 +35,19 @@ export class PorPaisComponent implements OnInit {
     console.log(this.termino);
   }
 
-  sugerencias($event: any) {
+  sugerencias(termino: any) {
     this.hasError = false;
+    this.termino = termino;
+    this.paisService.buscarPais$(termino).subscribe(
+      (resp) => {
+        this.showSugerencias = true;
+        this.paisesSugeridos = resp.slice(0, 5);
+      },
+      (err) => (this.paisesSugeridos = [])
+    );
+  }
+
+  buscarSugerido(termino: string) {
+    this.buscar(termino);
   }
 }
