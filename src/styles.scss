@@ -1,6 +1,13 @@
 body,
 html {
   height: 100%;
+  margin: 10px;
+  font-family: var(--font-family);
+  background-color: var(--surface-b);
+}
+
+.text-layout {
+  color: var(--text-color);
 }
 
 #sidebar {

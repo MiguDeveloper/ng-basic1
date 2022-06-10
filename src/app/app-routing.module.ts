@@ -1,3 +1,4 @@
+import { PipeMainComponent } from './modules/pipes/pipe-main.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from '@module/home/pages/home-page/home-page.component';
@@ -15,6 +16,12 @@ const routes: Routes = [
     component: PaisMainComponent,
     loadChildren: () =>
       import('./modules/pais/pais.module').then((m) => m.PaisModule),
+  },
+  {
+    path: 'pipe',
+    component: PipeMainComponent,
+    loadChildren: () =>
+      import('./modules/pipes/pipes.module').then((m) => m.PipesModule),
   },
 ];
 
